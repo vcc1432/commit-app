@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Commit, CommitsService } from './commits.service';
+import { Commit, CommitsService } from './commits/commits.service';
 
 @Component({
   selector: 'app-root',
