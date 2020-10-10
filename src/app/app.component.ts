@@ -13,7 +13,7 @@ export class AppComponent implements OnInit {
   constructor(private commitService: CommitsService) {}
 
   ngOnInit(): any {
-    this.showCommits();
+    // this.showCommits();
   }
 
   showCommits(): any{
