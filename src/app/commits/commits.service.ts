@@ -17,8 +17,8 @@ export class CommitsService {
 
   constructor(private httpClient: HttpClient) { }
 
-  getCommits(): Observable<Commit[]> {
+  getCommits(page: number = 1): Observable<Commit[]> {
     return this.httpClient
-    .get<Commit[]>('https://api.github.com/repos/angular/material/commits');
+    .get<Commit[]>(`https://api.github.com/repos/angular/material/commits?page=${page}`);
   }
 }

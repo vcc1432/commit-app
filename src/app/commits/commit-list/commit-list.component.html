@@ -1,4 +1,6 @@
 <div>
+  <button mat-button color="primary" (click)="getPrevious(); clicked = true" [disabled]="!showPrevious || clicked">Previous Page</button>
+  <button mat-button color="primary" (click)="getNext(); clicked = true" [disabled]="clicked">Next Page</button>
   <app-commit-item 
     *ngFor="let commit of commits; let i = index"
     [commit]="commit"
