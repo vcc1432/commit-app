@@ -1,0 +1,12 @@
+:host {
+  .grid-container {
+    display: grid;
+    height: 100vh;
+    grid-template-columns: 1fr 2fr;
+
+  }
+  .grid-item {
+    height: 100%;
+    overflow: scroll;
+  }
+}

@@ -1,0 +1,10 @@
+:host {
+  .commit-list-container {
+    height: 100%;
+  }
+  
+  .item-container {
+    overflow-y: scroll;
+    height: 100%;
+  }
+}

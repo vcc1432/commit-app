@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CommitsService, Commit } from '../commits.service';
+import { FormControl, FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-commit-list',
@@ -11,6 +12,11 @@ export class CommitListComponent implements OnInit {
   page: number;
   showPrevious: boolean;
   clicked: boolean;
+
+  range = new FormGroup({
+    start: new FormControl(),
+    end: new FormControl()
+  });
 
   constructor(private commitService: CommitsService) {
     this.page = 1;
