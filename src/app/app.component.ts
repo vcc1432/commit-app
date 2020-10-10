@@ -6,21 +6,8 @@ import { Commit, CommitsService } from './commits/commits.service';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent implements OnInit {
+export class AppComponent {
   title = 'commit-app';
-  commits: Commit[];
 
-  constructor(private commitService: CommitsService) {}
-
-  ngOnInit(): any {
-    // this.showCommits();
-  }
-
-  showCommits(): any{
-    this.commitService.getCommits()
-      .subscribe((data: Commit[]) => {
-        this.commits = { ...data };
-        console.log('commits:', this.commits);
-      });
-  }
+  constructor() {}
 }

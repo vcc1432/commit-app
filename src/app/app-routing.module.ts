@@ -6,7 +6,7 @@ import { CommitDetailComponent } from './commits/commit-detail/commit-detail.com
 
 const appRoutes: Routes = [
   {path: '', redirectTo: '/commits', pathMatch: 'full'},
-  {path: 'recipes', component: CommitsComponent, children: [
+  {path: 'commits', component: CommitsComponent, children: [
     { path: '', component: CommitStartComponent },
     { path: ':id', component: CommitDetailComponent }
   ]}

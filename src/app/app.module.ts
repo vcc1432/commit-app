@@ -11,6 +11,8 @@ import { CommitStartComponent } from './commits/commit-start/commit-start.compon
 import { CommitDetailComponent } from './commits/commit-detail/commit-detail.component';
 import { MaterialModule } from './material-module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { CommitListComponent } from './commits/commit-list/commit-list.component';
+import { CommitItemComponent } from './commits/commit-list/commit-item/commit-item.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +20,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     HeaderComponent,
     CommitsComponent,
     CommitStartComponent,
-    CommitDetailComponent
+    CommitDetailComponent,
+    CommitListComponent,
+    CommitItemComponent
   ],
   imports: [
     BrowserModule,

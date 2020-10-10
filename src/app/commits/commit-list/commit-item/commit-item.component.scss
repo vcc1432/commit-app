@@ -1,0 +1,13 @@
+:host {
+  .clearfix {
+    text-decoration: none; /* no underline */
+  }
+  .example-card {
+    margin: 20px;
+    max-width: 400px;
+  }
+  .message-wrapper {
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+}

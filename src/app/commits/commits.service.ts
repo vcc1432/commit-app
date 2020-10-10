@@ -13,6 +13,7 @@ export interface Commit {
   providedIn: 'root'
 })
 export class CommitsService {
+  private commits: Commit[] = [];
 
   constructor(private httpClient: HttpClient) { }
 

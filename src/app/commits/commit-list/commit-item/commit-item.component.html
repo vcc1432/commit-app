@@ -1,0 +1,20 @@
+<a
+  style="cursor: pointer;"
+  [routerLink]="[commit.sha]"
+  routerLinkActive="active"
+  class="clearfix">
+  <mat-card class="example-card">
+    <mat-card-header>
+        <div mat-card-avatar [ngStyle]="{
+          'background-image': 'url('+ commit?.author?.avatar_url +')',
+          'background-size': 'cover'
+        }"></div>
+        <mat-card-title>{{ commit?.commit?.author?.name }}</mat-card-title>
+        <mat-card-subtitle>{{ commit?.commit?.author?.date }}</mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content>
+      <div class="message-wrapper"> <p>{{commit?.commit?.message}}</p></div>
+    </mat-card-content>
+  </mat-card>
+</a>
+
