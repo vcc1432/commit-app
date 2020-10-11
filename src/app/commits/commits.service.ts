@@ -15,6 +15,7 @@ export interface Commit {
 })
 export class CommitsService {
   private commits: Commit[] = [];
+  private commit: Commit;
 
   constructor(private httpClient: HttpClient) { }
 
@@ -22,13 +23,19 @@ export class CommitsService {
     this.commits = commits;
   }
 
+  setCommit(commit: Commit): void {
+    this.commit = commit;
+  }
+
   getCommits(): Commit[] {
     return [...this.commits];
   }
 
   getCommit(sha: string): Commit {
-    const commit = this.commits.find(commitItem => commitItem.sha === sha);
-    return commit;
+    if (!this.commit || this.commit.sha !== sha) {
+      this.commit = this.commits.find(commitItem => commitItem.sha === sha);
+    }
+    return {...this.commit};
   }
 
   fetchCommits(page: number = 1): Observable<Commit[]> {
@@ -36,6 +43,16 @@ export class CommitsService {
     .get<Commit[]>(`https://api.github.com/repos/angular/material/commits?page=${page}`)
     .pipe(
       tap( commits => this.setCommits(commits))
+    );
+  }
+
+  fetchCommit(sha: string): Observable<Commit> {
+    return this.httpClient
+    .get<Commit>(`https://api.github.com/repos/angular/material/commits/${sha}`)
+    .pipe(
+      tap( commit => {
+        this.setCommit(commit);
+      })
     );
   }
 }
