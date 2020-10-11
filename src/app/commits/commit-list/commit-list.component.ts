@@ -29,11 +29,10 @@ export class CommitListComponent implements OnInit {
   }
 
   showCommits(page): any{
-    this.commitService.getCommits(page)
+    this.commitService.fetchCommits(page)
       .subscribe((data: Commit[]) => {
         this.commits = [ ...data ];
         this.clicked = false;
-        console.log('commits:', this.commits);
       });
   }
 

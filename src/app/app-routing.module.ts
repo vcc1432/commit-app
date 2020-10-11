@@ -8,7 +8,7 @@ const appRoutes: Routes = [
   {path: '', redirectTo: '/commits', pathMatch: 'full'},
   {path: 'commits', component: CommitsComponent, children: [
     { path: '', component: CommitStartComponent },
-    { path: ':id', component: CommitDetailComponent }
+    { path: ':sha', component: CommitDetailComponent }
   ]}
 ];
 
