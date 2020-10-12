@@ -13,11 +13,6 @@ export class CommitListComponent implements OnInit {
   showPrevious: boolean;
   clicked: boolean;
 
-  range = new FormGroup({
-    start: new FormControl(),
-    end: new FormControl()
-  });
-
   constructor(private commitService: CommitsService) {
     this.page = 1;
     this.showPrevious = false;
@@ -37,7 +32,6 @@ export class CommitListComponent implements OnInit {
   }
 
   getNext(): void {
-    console.log('next');
     this.page ++;
     if (this.page > 1) {
       this.showPrevious = true;
@@ -47,7 +41,6 @@ export class CommitListComponent implements OnInit {
   }
 
   getPrevious(): void {
-    console.log('prev');
     this.page --;
     if (this.page < 2) {
       this.showPrevious = false;
@@ -56,4 +49,11 @@ export class CommitListComponent implements OnInit {
     this.showCommits(this.page);
   }
 
+  addEvent(e, event: any): void {
+    console.log(e, event.value);
+  }
+
+  onCalendarClosed(): void {
+    console.log('Joeeeeee');
+  }
 }

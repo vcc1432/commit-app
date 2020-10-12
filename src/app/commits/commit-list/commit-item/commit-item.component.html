@@ -10,7 +10,7 @@
           'background-size': 'cover'
         }"></div>
         <mat-card-title>{{ commit?.commit?.committer?.name }}</mat-card-title>
-        <mat-card-subtitle>comitted: {{ commit?.commit?.committer?.date }}</mat-card-subtitle>
+        <mat-card-subtitle>comitted: {{ commit?.commit?.committer?.date | date:'medium' }}</mat-card-subtitle>
     </mat-card-header>
     <mat-card-content>
       <div class="message-wrapper"> <p>{{commit?.commit?.message}}</p></div>
