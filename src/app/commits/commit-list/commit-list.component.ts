@@ -8,7 +8,7 @@ import { FormControl, FormGroup } from '@angular/forms';
   styleUrls: ['./commit-list.component.scss']
 })
 export class CommitListComponent implements OnInit {
-  commits: Commit[];
+  commits: Commit[] = [];
   page: number;
   showPrevious: boolean;
   clicked: boolean;
@@ -16,23 +16,61 @@ export class CommitListComponent implements OnInit {
     start: new FormControl(),
     end: new FormControl()
   });
+  month: string;
+  today: string;
+  tomorrow: string;
+  firstDay: string;
 
   constructor(private commitService: CommitsService) {
     this.page = 1;
     this.showPrevious = false;
     this.clicked = false;
+
+    const date = new Date();  // 2009-11-10
+    const firstDay = new Date(date.getFullYear(), date.getMonth(), 1);
+    const tomorrow = new Date(date);
+    tomorrow.setDate(tomorrow.getDate() + 1);
+    this.tomorrow = tomorrow.toISOString();
+    this.firstDay = firstDay.toISOString();
+    this.today = date.toISOString();
+    this.month = date.toLocaleString('default', { month: 'long' });
   }
 
   ngOnInit(): void {
+
     this.showCommits(this.page);
   }
 
   showCommits(page): any{
-    this.commitService.fetchCommits(page)
+    const range = this.determineDateRange();
+
+    this.commitService.fetchCommits(page, range.start, range.end)
       .subscribe((data: Commit[]) => {
-        this.commits = [ ...data ];
+        if (data && data.length > 0) {
+          this.commits = [ ...data ];
+        } else {
+          this.commits = [];
+        }
         this.clicked = false;
       });
+  }
+
+  determineDateRange(): any {
+    if (!this.range.value.start && !this.range.value.end) {
+      const newRange: { start: string, end: string} = {
+        start: this.firstDay,
+        end: this.today
+      };
+      return newRange;
+    } else {
+      if (this.range.value.start) {
+        this.range.value.start = this.range.value.start.toISOString();
+      }
+      if (this.range.value.end) {
+        this.range.value.end = this.range.value.end.toISOString();
+      }
+      return this.range.value;
+    }
   }
 
   getNext(): void {
@@ -55,5 +93,6 @@ export class CommitListComponent implements OnInit {
 
   onDateChange(event: any): void {
     console.log('range: ', this.range);
+    this.showCommits(1);
   }
 }

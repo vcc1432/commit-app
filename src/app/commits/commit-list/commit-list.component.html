@@ -1,9 +1,11 @@
 <div class="commit-list-container">
-  <h1>Latest Commits</h1>
+  <h1 *ngIf="!range?.value?.start && !range?.value?.end">Commits in {{ month }}</h1>
+  <h1 *ngIf="range?.value?.start || range?.value?.end">Showing Commits from {{ range?.value?.start | date }} until {{ range?.value?.end | date }}</h1>
+
   <div class="calendar-container">
     <mat-form-field>
       <mat-label>Enter a date range</mat-label>
-      <mat-date-range-input [formGroup]="range" [rangePicker]="picker">
+      <mat-date-range-input [formGroup]="range" [rangePicker]="picker" [max]="tomorrow">
         <input (dateChange)="onDateChange($event)" formControlName="start" matStartDate placeholder="Start date">
         <input (dateChange)="onDateChange($event)" formControlName="end" matEndDate placeholder="End date">
       </mat-date-range-input>
@@ -17,13 +19,16 @@
   <div class="pagination-container">
     <button mat-button color="primary" (click)="getPrevious(); clicked = true" [disabled]="!showPrevious || clicked">Previous Page</button>
     <mat-label>Page {{ page }}</mat-label>
-    <button mat-button color="primary" (click)="getNext(); clicked = true" [disabled]="clicked">Next Page</button>
+    <button mat-button color="primary" (click)="getNext(); clicked = true" [disabled]="clicked || commits?.length < 30">Next Page</button>
   </div>
-  <div class="item-list-container">
+  <div *ngIf="commits.length > 0" class="item-list-container">
     <app-commit-item 
       *ngFor="let commit of commits; let i = index"
       [commit]="commit"
       [index]="i">
     </app-commit-item>
+  </div>
+  <div  *ngIf="!commits.length">
+    <h3>No commits found, maybe try a different date range?</h3>
   </div>
 </div>

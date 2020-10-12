@@ -35,6 +35,7 @@ Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protrac
 - Detail page
 - Readme update for pre-requirements
 - Tests passing
+- Error Handling
 
 ### Nice-to-haves
 - Ellipsis of list items

@@ -38,9 +38,18 @@ export class CommitsService {
     return {...this.commit};
   }
 
-  fetchCommits(page: number = 1): Observable<Commit[]> {
+  fetchCommits(page: number = 1, since, until): Observable<Commit[]> {
+    let baseUrl = `https://api.github.com/repos/angular/material/commits?page=${page}`;
+    if (since){
+      baseUrl += `&since=${since}`;
+    }
+    if (until) {
+      baseUrl += `&until=${until}`;
+    }
+
+    console.log('baseUrl: ', baseUrl);
     return this.httpClient
-    .get<Commit[]>(`https://api.github.com/repos/angular/material/commits?page=${page}`)
+    .get<Commit[]>(baseUrl)
     .pipe(
       tap( commits => this.setCommits(commits))
     );
