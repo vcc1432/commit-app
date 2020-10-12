@@ -2,9 +2,20 @@
   .commit-list-container {
     height: 100%;
   }
+
+  .calendar-container {
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  .pagination-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
   
-  .item-container {
+  .item-list-container {
     overflow-y: scroll;
-    height: 100%;
+    height: 75vh;
   }
 }

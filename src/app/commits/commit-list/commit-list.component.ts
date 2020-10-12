@@ -12,6 +12,10 @@ export class CommitListComponent implements OnInit {
   page: number;
   showPrevious: boolean;
   clicked: boolean;
+  range = new FormGroup({
+    start: new FormControl(),
+    end: new FormControl()
+  });
 
   constructor(private commitService: CommitsService) {
     this.page = 1;
@@ -49,11 +53,7 @@ export class CommitListComponent implements OnInit {
     this.showCommits(this.page);
   }
 
-  addEvent(e, event: any): void {
-    console.log(e, event.value);
-  }
-
-  onCalendarClosed(): void {
-    console.log('Joeeeeee');
+  onDateChange(event: any): void {
+    console.log('range: ', this.range);
   }
 }

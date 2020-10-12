@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 
 import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
@@ -13,6 +14,7 @@ import { MaterialModule } from './material-module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CommitListComponent } from './commits/commit-list/commit-list.component';
 import { CommitItemComponent } from './commits/commit-list/commit-item/commit-item.component';
+import { MatNativeDateModule } from '../../node_modules/@angular/material/core';
 
 @NgModule({
   declarations: [
@@ -29,7 +31,10 @@ import { CommitItemComponent } from './commits/commit-list/commit-item/commit-it
     HttpClientModule,
     AppRoutingModule,
     MaterialModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    ReactiveFormsModule,
+    FormsModule,
+    MatNativeDateModule
   ],
   providers: [],
   bootstrap: [AppComponent]
