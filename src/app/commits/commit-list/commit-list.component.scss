@@ -17,5 +17,7 @@
   .item-list-container {
     overflow-y: scroll;
     height: 75vh;
+    display: flex;
+    flex-direction: column;
   }
 }

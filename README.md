@@ -37,8 +37,6 @@ Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protrac
 - Tests passing
 
 ### Nice-to-haves
-- Alignment of UI elements
 - Ellipsis of list items
-- Removing 2nd scroll in the left panel
 - Make a Custom Material Theme
 
