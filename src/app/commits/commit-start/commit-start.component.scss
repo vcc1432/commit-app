@@ -4,5 +4,10 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-direction: column;
+  }
+
+  .material-logo {
+    padding: 20px;
   }
 }

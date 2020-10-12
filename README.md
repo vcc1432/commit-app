@@ -31,7 +31,6 @@ Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protrac
 ## Future improvements, features and fixes
 
 ###To Do:
-- Working datepicker
 - Detail page
 - Readme update for pre-requirements
 - Tests passing
@@ -40,4 +39,6 @@ Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protrac
 ### Nice-to-haves
 - Ellipsis of list items
 - Make a Custom Material Theme
+- Reset Datepicker when clicking home
+- Responsive styling
 
