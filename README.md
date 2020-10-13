@@ -2,11 +2,13 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.1.6.
 It implements the Github API and fetches the latest commits from the Angluar Material Repo https://api.github.com/repos/angular/material/commits. 
-It will fetch the last 30 commits, which can be filtered in the frontend of the application. The user can filter by date range. This will trigger a request to the API to fetch all the commits within that date range. 
+It will fetch the commits from last month, with the latest commit on top of the list. By selecting a date range, an API call will be triggered which fetches the commits within that date range. 
+
+## Technical Decisions
 
 ## Available Scripts
 
-In the project directory, you can run:
+Before running the application, it is recommended to install the Angular CLI: `npm install -g @angular/cli`. In the project directory, you can run:
 
 ### Node Package Manager
 
@@ -30,15 +32,19 @@ Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protrac
 
 ## Future improvements, features and fixes
 
-###To Do:
-- Detail page
-- Readme update for pre-requirements
-- Tests passing
-- Error Handling
+### To Do:
+- Detail page;
+- Readme update for pre-requirements;
+- Tests passing;
+- Error Handling;
 
 ### Nice-to-haves
-- Ellipsis of list items
-- Make a Custom Material Theme
-- Reset Datepicker when clicking home
-- Responsive styling
+
+Since there was limited time to set up this application, I have a few ideas for future improvements:
+
+- Make a not-found page;
+- Ellipsis of the commit message in list items;
+- Make a Custom Material Theme;
+- Reset Datepicker when clicking home;
+- Responsive styling;
 

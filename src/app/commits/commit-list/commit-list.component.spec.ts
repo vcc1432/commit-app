@@ -1,3 +1,4 @@
+import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { CommitListComponent } from './commit-list.component';
@@ -8,7 +9,8 @@ describe('CommitListComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ CommitListComponent ]
+      declarations: [ CommitListComponent ],
+      imports: [HttpClientTestingModule]
     })
     .compileComponents();
   });
