@@ -21,5 +21,9 @@
     height: 75vh;
     display: flex;
     flex-direction: column;
+    
+    @media only screen and (max-width: 600px) {
+      height: 50vh;
+    }
   }
 }
