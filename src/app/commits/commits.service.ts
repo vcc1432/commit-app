@@ -47,7 +47,6 @@ export class CommitsService {
       baseUrl += `&until=${until}`;
     }
 
-    console.log('baseUrl: ', baseUrl);
     return this.httpClient
     .get<Commit[]>(baseUrl)
     .pipe(

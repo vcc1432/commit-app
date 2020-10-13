@@ -26,7 +26,7 @@ export class CommitListComponent implements OnInit {
     this.showPrevious = false;
     this.clicked = false;
 
-    const date = new Date();  // 2009-11-10
+    const date = new Date(); 
     const firstDay = new Date(date.getFullYear(), date.getMonth(), 1);
     const tomorrow = new Date(date);
     tomorrow.setDate(tomorrow.getDate() + 1);
@@ -92,7 +92,6 @@ export class CommitListComponent implements OnInit {
   }
 
   onDateChange(event: any): void {
-    console.log('range: ', this.range);
     this.showCommits(1);
   }
 }

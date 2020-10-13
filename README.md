@@ -46,5 +46,4 @@ Since there was limited time to set up this application, I have a few ideas for 
 - Ellipsis of the commit message in list items;
 - Make a Custom Material Theme;
 - Reset Datepicker when clicking home;
-- Responsive styling;
 

@@ -20,12 +20,10 @@ export class CommitDetailComponent implements OnInit {
     this.route.params
     .subscribe(
       (params: Params) => {
-        console.log('params:', params);
         this.sha = params.sha;
         this.commit = this.commitsService.getCommit(this.sha);
-        console.log('commit: ', this.commit);
+        this.commit.commit.message = this.commit.commit.message.replace(new RegExp('\n', 'g'), '<br />');
       }
     );
   }
-
 }
