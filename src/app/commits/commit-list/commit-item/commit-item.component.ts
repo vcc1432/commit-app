@@ -10,6 +10,8 @@ export class CommitItemComponent implements OnInit, OnChanges {
   @Input() commit: Commit;
   @Input() index: number;
 
+  message: string;
+
   constructor() { }
 
   ngOnInit(): void {
@@ -17,7 +19,7 @@ export class CommitItemComponent implements OnInit, OnChanges {
 
   ngOnChanges(changes: SimpleChanges): void {
     if (changes.commit && changes.commit.currentValue && changes.commit.currentValue.sha) {
-      this.commit.commit.message = this.commit.commit.message.split(new RegExp('\n', 'g'))[0];
+      this.message = this.commit.commit.message.split(new RegExp('\n', 'g'))[0];
     }
   }
 
