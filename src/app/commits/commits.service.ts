@@ -8,6 +8,7 @@ export interface Commit {
   node_id: string;
   commit: any;
   committer: any;
+  author: any;
 }
 
 @Injectable({
