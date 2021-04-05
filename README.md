@@ -41,8 +41,7 @@ Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.
 Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
 
 ## Future improvements, features and fixes
-
-Since there was limited time to set up this application, I have a few ideas for future improvements:
+I have a few ideas for future improvements:
 
 - Make a not-found page when the user navigates to a non-existent url;
 - Make a Custom Material Theme;
